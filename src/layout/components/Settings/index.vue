@@ -115,6 +115,13 @@
       </span>
     </div>
 
+    <div class="drawer-item">
+      <span>页面切换动画</span>
+      <span class="comp-style">
+        <el-switch v-model="settingsStore.pageAnimation" class="drawer-switch" />
+      </span>
+    </div>
+
     <el-divider />
 
     <el-button type="primary" plain icon="DocumentAdd" @click="saveSetting">保存配置</el-button>
@@ -201,7 +208,8 @@ function saveSetting() {
     "dynamicTitle": storeSettings.value.dynamicTitle,
     "footerVisible": storeSettings.value.footerVisible,
     "sideTheme": storeSettings.value.sideTheme,
-    "theme": storeSettings.value.theme
+    "theme": storeSettings.value.theme,
+    "pageAnimation": storeSettings.value.pageAnimation
   }
   localStorage.setItem("layout-setting", JSON.stringify(layoutSetting))
   setTimeout(proxy.$modal.closeLoading(), 1000)
